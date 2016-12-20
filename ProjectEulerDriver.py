@@ -102,8 +102,8 @@ def main():
     sys.path.append(os.path.dirname(os.path.abspath(__file__)))
     print(os.path.dirname(os.path.abspath(__file__)))
 
-    problem_number = display_main_menu(completed_solutions)
     while True:
+        problem_number = display_main_menu(completed_solutions)
         if problem_number < 10:
             file_name = "Problem0" + str(problem_number)
         else:
@@ -112,9 +112,7 @@ def main():
         problem_module = importlib.import_module(file_name)
         print(problem_module.display_problem())
         if problem_confirmed():
-            problem_module.solve()
-        else:
-            problem_number = display_main_menu(completed_solutions)
+            print("ANSWER: " + str(problem_module.solve()))
 
 
 if __name__ == "__main__":

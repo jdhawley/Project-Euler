@@ -3,7 +3,6 @@ Solution for problem 1 of Project Euler.
 
 Find the sum of all the multiples of 3 or 5 below 1000.
 """
-from sys import argv
 
 
 def get_sum(top):
@@ -20,13 +19,16 @@ def get_sum(top):
     return sum_divisible_by(3) + sum_divisible_by(5) - sum_divisible_by(15)
 
 
-def solve(top=1000):
+def solve():
     """
     Serves as the driver for problem 1.
     """
-    top = int(argv[1])
-    print(get_sum(top-1))   # Takes 00.000 seconds for 100,000,000
+    top = 1000
+    return get_sum(top-1)       # Takes 00.000 seconds for 100,000,000
 
 
 def display_problem():
+    """
+    Returns a string representing the problem being solved.
+    """
     return "\nFind the sum of all multiples of 3 or 5 below any number (default size is 1000).\n"
