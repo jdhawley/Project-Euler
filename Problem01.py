@@ -31,4 +31,4 @@ def display_problem():
     """
     Returns a string representing the problem being solved.
     """
-    return "\nFind the sum of all multiples of 3 or 5 below any number (default size is 1000).\n"
+    return "\nFind the sum of all multiples of 3 or 5 below 1000.\n"
