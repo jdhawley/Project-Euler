@@ -8,6 +8,7 @@ import importlib
 import os
 import re
 import sys
+import time
 
 
 def get_solutions():
@@ -102,6 +103,17 @@ def get_problem_module(problem_number):
     return importlib.import_module(file_name)
 
 
+def run_solution(problem_number, problem_module):
+    """
+    Runs a solution, times how long it takes, then prints a string with the answer and time it took to solve.
+    """
+    start = time.time()
+    answer = problem_module.solve()
+    end = time.time()
+    print("The answer to Problem {0} is {1} and it took {2:.2f} seconds to solve."
+          .format(problem_number, answer, end-start))
+
+
 def main():
     """
     Main function for the Project Euler Driver.
@@ -111,9 +123,9 @@ def main():
     solve.
     """
     if len(sys.argv) > 1:
-        problem_number = int(sys.argv[1])
-        problem_module = get_problem_module(problem_number)
-        print(problem_module.solve())
+        for number in sys.argv[1::]:
+            problem_number = int(number)
+            run_solution(problem_number, get_problem_module(problem_number))
         sys.exit(0)
 
     completed_solutions = get_solutions()
@@ -125,7 +137,7 @@ def main():
         problem_module = get_problem_module(problem_number)
         print(problem_module.display_problem())
         if problem_confirmed():
-            print("ANSWER: " + str(problem_module.solve()))
+            run_solution(problem_module)
 
 
 if __name__ == "__main__":
