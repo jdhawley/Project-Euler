@@ -90,6 +90,18 @@ def problem_confirmed():
         return False
 
 
+def get_problem_module(problem_number):
+    """
+    Imports the module corresponding to the problem number passed in.
+    """
+    if problem_number < 10:
+        file_name = "Problem0" + str(problem_number)
+    else:
+        file_name = "Problem" + str(problem_number)
+
+    return importlib.import_module(file_name)
+
+
 def main():
     """
     Main function for the Project Euler Driver.
@@ -98,18 +110,19 @@ def main():
     solutions, allowing the user to select a specific problem to
     solve.
     """
+    if len(sys.argv) > 1:
+        problem_number = int(sys.argv[1])
+        problem_module = get_problem_module(problem_number)
+        print(problem_module.solve())
+        sys.exit(0)
+
     completed_solutions = get_solutions()
     sys.path.append(os.path.dirname(os.path.abspath(__file__)))
     print(os.path.dirname(os.path.abspath(__file__)))
 
     while True:
         problem_number = display_main_menu(completed_solutions)
-        if problem_number < 10:
-            file_name = "Problem0" + str(problem_number)
-        else:
-            file_name = "Problem" + str(problem_number)
-
-        problem_module = importlib.import_module(file_name)
+        problem_module = get_problem_module(problem_number)
         print(problem_module.display_problem())
         if problem_confirmed():
             print("ANSWER: " + str(problem_module.solve()))
