@@ -10,7 +10,10 @@ def solve():
     Serves as the driver for problem 7.
     """
 
-    def isPrime(num):
+    def is_prime(num):
+        """
+        Finds whether or not a number is prime.
+        """
         if num == 2:
             return True
         if num % 2 == 0:
@@ -24,15 +27,18 @@ def solve():
             k += 2
         return True
 
-    def findNext(num):
+    def find_next_prime(num):
+        """
+        Finds the next prime number after the number passed in.
+        """
         while True:
             num += 2
-            if isPrime(num):
+            if is_prime(num):
                 return num
 
     prime_number = 3
     for i in range(1, 10000):
-        prime_number = findNext(prime_number)
+        prime_number = find_next_prime(prime_number)
 
     return prime_number
 

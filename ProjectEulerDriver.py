@@ -96,9 +96,9 @@ def get_problem_module(problem_number):
     Imports the module corresponding to the problem number passed in.
     """
     if problem_number < 10:
-        file_name = "Problem0" + str(problem_number)
+        file_name = "Problems.Problem0" + str(problem_number)
     else:
-        file_name = "Problem" + str(problem_number)
+        file_name = "Problems.Problem" + str(problem_number)
 
     return importlib.import_module(file_name)
 
