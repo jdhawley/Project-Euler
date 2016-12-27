@@ -1,7 +1,7 @@
 """
 Solution for problem 13 of Project Euler.
 
-Work out the first ten digits of the sum of the numbers in Numbers11.txt.
+Work out the first ten digits of the sum of the numbers in Numbers13.txt.
 """
 import os
 
@@ -22,4 +22,4 @@ def display_problem():
     """
     Returns a string representing the problem being solved.
     """
-    return "\nWork out the first ten digits of the sum of the numbers in Numbers11.txt.\n"
+    return "\nWork out the first ten digits of the sum of the numbers in Numbers13.txt.\n"
