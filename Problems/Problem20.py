@@ -1,7 +1,7 @@
 """
 Solution for problem 20 of Project Euler.
 
-What is the largest prime factor of the number 600851475143?
+Find the sum of the digits in the number 100!
 """
 
 
@@ -25,4 +25,4 @@ def display_problem():
     """
     Returns a string representing the problem being solved.
     """
-    return "\nWhat is the largest prime factor of the number 600851475143?\n"
+    return "\nFind the sum of the digits in the number 100!\n"
