@@ -1,0 +1,6 @@
+My idea for new functionalities to be added to the program.
+    1. Implement a GUI.
+    2. Allow for ellipses to be used in the command line to run all problems between the two ends (e.g. 1...10)
+
+Project Euler Problems that need a speed boost:
+    23 (22.4 seconds)
