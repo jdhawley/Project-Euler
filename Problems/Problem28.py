@@ -10,7 +10,7 @@ def solve():
     Serves as the driver for problem 28.
     """
     total = 1
-    for i in range(2,502):
+    for i in range(2, 502):
         total += (4 * (i * i)) - (10 * i) + 7
         total += (4 * (i * i)) - (8 * i) + 5
         total += (4 * (i * i)) - (6 * i) + 3
